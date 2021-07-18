@@ -71,9 +71,7 @@ func GetInt(key string, defaultValue ...int) int {
 
 func GetBool(key string, defaultValue ...bool) bool {
 	var s string
-	if len(defaultValue) > 0 {
-		s = GetString(key, fmt.Sprintf("%v", defaultValue[0]))
-	}
+	s = GetString(key, fmt.Sprintf("%v", defaultValue[0]))
 	ret, err := strconv.ParseBool(s)
 	if err != nil {
 		return false
